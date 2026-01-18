@@ -93,10 +93,10 @@ const Portfolio = () => {
     ];
 
     return (
-        <div className="min-h-screen pt-24">
+        <div className="pt-20 min-h-screen">
             <SEO
-                title="Portfolio & Shop"
-                description="Nos dernières réalisations et produits disponibles. Smartphones reconditionnés, réparations complexes et accessoires."
+                title="Achat iPhone & Samsung Reconditionné Toulouse | Stock BELPHONETEL"
+                description="Showroom Belfontel : iPhone 15, 14, 13 Pro Max et Samsung S23/S24 en stock. Téléphones reconditionnés à neuf, garantis 12 mois. Vente et rachat immédiat."
             />
 
             {/* Hero Section */}

@@ -43,10 +43,10 @@ const Services = () => {
     ];
 
     return (
-        <div className="min-h-screen pt-24">
+        <div className="pt-20 min-h-screen">
             <SEO
-                title="Nos Services"
-                description="Découvrez nos prestations de réparation de smartphones à Toulouse. Écran, batterie, micro-soudure. Des tarifs transparents et une intervention rapide."
+                title="Tarifs Réparation iPhone, Samsung, Huawei | BELPHONETEL Toulouse"
+                description="Consultez nos tarifs de réparation écran, batterie, connecteur de charge. Devis gratuit et immédiat. Réparation iPhone 11, 12, 13, 14, 15 et Samsung Galaxy."
             />
 
             {/* Hero Section */}

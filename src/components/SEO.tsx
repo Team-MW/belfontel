@@ -10,7 +10,7 @@ interface SEOProps {
 
 const SEO = ({ title, description, keywords, ogImage }: SEOProps) => {
     const location = useLocation();
-    const fullTitle = `${title} | BELFONTEL`;
+    const fullTitle = `${title} | BELPHONETEL`;
     const url = `https://www.belfontel.com${location.pathname}`;
     const defaultImage = 'https://www.belfontel.com/og-image.jpg';
 

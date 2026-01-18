@@ -1,6 +1,37 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import { useState } from 'react';
+
+// Composant d'animation des nombres
+const AnimatedCounter = ({ end, suffix = '', duration = 2000 }: { end: number, suffix?: string, duration?: number }) => {
+    const [count, setCount] = useState(0);
+
+    return (
+        <motion.span
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            onViewportEnter={() => {
+                let start = 0;
+                const totalFrames = duration / 16;
+                const increment = end / totalFrames;
+
+                const timer = setInterval(() => {
+                    start += increment;
+                    if (start >= end) {
+                        setCount(end);
+                        clearInterval(timer);
+                    } else {
+                        setCount(start);
+                    }
+                }, 16);
+            }}
+        >
+            {Math.floor(count).toLocaleString('fr-FR')}{suffix}
+        </motion.span>
+    );
+};
 
 const Home = () => {
     // Animation variants pour réutilisation
@@ -50,8 +81,8 @@ const Home = () => {
     return (
         <div className="min-h-screen">
             <SEO
-                title="Accueil"
-                description="BELFONTEL - Expert en téléphonie à Toulouse. Vente de smartphones, réparation express, rachat et accessoires premium. iPhone, Samsung, Huawei."
+                title="Réparation iPhone & Samsung Toulouse | BELPHONETEL - N°1 Rapide & Garanti"
+                description="Réparation express de téléphone à Toulouse (31). Changement écran iPhone, batterie Samsung, Micro-soudure. Sans rendez-vous, garantie, pièces d'origine. Vente smartphones neufs et occasion."
                 keywords="réparation téléphone toulouse, rachat mobile, vente iphone, réparation écran, belfontel, accessoires smartphone"
             />
 
@@ -93,13 +124,13 @@ const Home = () => {
                             </motion.div>
 
                             <motion.h1 variants={fadeInUp} className="text-5xl lg:text-7xl font-black mb-6 uppercase tracking-tight leading-none text-white">
-                                Votre mobile <br />
-                                <span className="neon-text">entre de bonnes mains</span>
+                                <span className="bg-gradient-to-b from-white to-gray-500 bg-clip-text text-transparent drop-shadow-sm">VOTRE MOBILE</span> <br />
+                                <span className="text-primary drop-shadow-[0_0_20px_rgba(255,0,0,0.4)]">ENTRE DE BONNES MAINS</span>
                             </motion.h1>
 
                             <motion.p variants={fadeInUp} className="text-lg lg:text-xl text-gray-400 mb-8 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
                                 Expert en <strong>réparation express</strong>, vente de <strong>smartphones premium</strong> et accessoires high-tech.
-                                Redonnez vie à votre appareil ou passez au niveau supérieur avec BELFONTEL.
+                                Redonnez vie à votre appareil ou passez au niveau supérieur avec BELPHONETEL.
                             </motion.p>
 
                             <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -138,14 +169,23 @@ const Home = () => {
                             transition={{ duration: 1, delay: 0.5 }}
                         >
                             <div className="relative z-10 transform lg:rotate-[-5deg] lg:hover:rotate-0 transition-transform duration-700 scale-100 lg:scale-[1.6] origin-center lg:translate-y-8 lg:translate-x-[-2%]">
-                                <div className="absolute inset-0 bg-gradient-to-tr from-primary to-transparent opacity-20 blur-3xl transform scale-110"></div>
-                                <div className="drop-shadow-2xl">
+                                <motion.div
+                                    initial={{ opacity: 0, x: 50 }}
+                                    animate={{ opacity: 1, x: 0, y: [0, -20, 0], rotate: [0, 2, -2, 0] }}
+                                    transition={{
+                                        opacity: { duration: 0.8 },
+                                        x: { duration: 0.8 },
+                                        y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+                                        rotate: { duration: 5, repeat: Infinity, ease: "easeInOut" }
+                                    }}
+                                    className="relative z-10 hidden lg:block"
+                                >
                                     <img
                                         src="/assets/iphone.png"
                                         alt="iPhone Premium Belfontel"
-                                        className="w-3/4 md:w-1/2 lg:w-full h-auto max-w-[300px] lg:max-w-[800px] mx-auto filter drop-shadow-[0_0_30px_rgba(255,31,31,0.3)] lg:drop-shadow-[0_0_50px_rgba(255,31,31,0.5)]"
+                                        className="w-full max-w-[900px] h-auto object-contain drop-shadow-[0_0_50px_rgba(255,0,0,0.3)]"
                                     />
-                                </div>
+                                </motion.div>
                             </div>
                         </motion.div>
                     </div>
@@ -202,7 +242,7 @@ const Home = () => {
                     >
                         <div className="absolute inset-0 bg-primary/20 blur-xl rounded-lg"></div>
                         <div className="bg-primary text-white font-black text-2xl md:text-4xl px-12 py-4 rounded-lg transform -skew-x-12 relative z-10 shadow-[0_0_30px_rgba(255,31,31,0.4)] border border-white/20">
-                            @BELFONTEL_31
+                            @belphonetel
                         </div>
                     </motion.div>
 
@@ -215,25 +255,13 @@ const Home = () => {
                         className="relative w-64 h-64 md:w-80 md:h-80 group cursor-pointer"
                     >
                         {/* Cadre brillant */}
+                        {/* Cadre brillant avec vraie image Snapcode */}
                         <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-[2.5rem] p-1 shadow-[0_0_50px_rgba(255,31,31,0.2)] group-hover:shadow-[0_0_80px_rgba(255,31,31,0.5)] transition-all duration-500">
-                            <div className="w-full h-full bg-black rounded-[2.2rem] flex items-center justify-center relative overflow-hidden">
-
-                                {/* Pattern de fond (simulation QR) */}
-                                <div className="absolute inset-0 opacity-30"
-                                    style={{
-                                        backgroundImage: 'radial-gradient(rgba(255, 31, 31, 0.5) 2px, transparent 2px)',
-                                        backgroundSize: '12px 12px'
-                                    }}>
-                                </div>
-                                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-80"></div>
-
-                                {/* Fantôme / Logo Central */}
-                                <div className="w-24 h-24 bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl flex items-center justify-center shadow-2xl relative z-10 group-hover:scale-110 transition-transform duration-300">
-                                    <svg viewBox="0 0 24 24" className="w-14 h-14 fill-primary drop-shadow-[0_0_10px_rgba(255,31,31,0.8)]" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 2C8.5 2 7 5 7 7C7 8.5 6 9.5 5 9.5C4 9.5 3 10.5 3 12C3 13.5 4 14 5 14C6 14 6.5 14.5 6 15.5C5.5 16.5 5 17.5 5 19.5C5 20.5 6 21 7 21C8 21 8.5 20 12 20C15.5 20 16 21 17 21C18 21 19 20.5 19 19.5C19 17.5 18.5 16.5 18 15.5C17.5 14.5 18 14 19 14C20 14 21 13.5 21 12C21 10.5 20 9.5 19 9.5C18 9.5 17 8.5 17 7C17 5 15.5 2 12 2Z" />
-                                    </svg>
-                                </div>
-                            </div>
+                            <img
+                                src="/assets/snapshat.jpg"
+                                alt="Snapcode Belphonetel"
+                                className="w-full h-full object-cover rounded-[2.2rem]"
+                            />
                         </div>
                     </motion.div>
 
@@ -249,7 +277,7 @@ const Home = () => {
                             <h2 className="text-4xl md:text-5xl font-black text-white mb-6 leading-tight">PLUS QU'UNE <br />SIMPLE BOUTIQUE.</h2>
                             <div className="space-y-6 text-gray-300 font-light text-lg leading-relaxed text-justify">
                                 <p>
-                                    Chez <strong>BELFONTEL</strong>, nous comprenons que votre smartphone est le prolongement de votre vie. Qu'il s'agisse de vos photos, de vos contacts professionnels ou de vos souvenirs, chaque donnée compte.
+                                    Chez <strong>BELPHONETEL</strong>, nous comprenons que votre smartphone est le prolongement de votre vie. Qu'il s'agisse de vos photos, de vos contacts professionnels ou de vos souvenirs, chaque donnée compte.
                                 </p>
                                 <p>
                                     C'est pourquoi nous ne faisons <strong>aucun compromis sur la qualité</strong>. Là où d'autres utilisent des pièces génériques bas de gamme, nous privilégions les composants d'origine ou de qualité équivalente certifiée. Nos techniciens ne sont pas de simples réparateurs, ce sont des experts passionnés formés aux dernières technologies de micro-soudure.
@@ -258,11 +286,15 @@ const Home = () => {
 
                             <div className="grid grid-cols-2 gap-6 mt-10">
                                 <div className="border-l-2 border-primary pl-4">
-                                    <h4 className="text-white font-bold text-xl mb-1">15 000+</h4>
+                                    <h4 className="text-white font-black text-2xl mb-1 flex items-center">
+                                        <AnimatedCounter end={15000} suffix="+" duration={2500} />
+                                    </h4>
                                     <p className="text-sm text-gray-500 uppercase">Clients Satisfaits</p>
                                 </div>
                                 <div className="border-l-2 border-primary pl-4">
-                                    <h4 className="text-white font-bold text-xl mb-1">30 min</h4>
+                                    <h4 className="text-white font-black text-2xl mb-1 flex items-center">
+                                        <AnimatedCounter end={30} suffix=" min" duration={1500} />
+                                    </h4>
                                     <p className="text-sm text-gray-500 uppercase">Temps moyen réparation</p>
                                 </div>
                             </div>
@@ -353,40 +385,43 @@ const Home = () => {
                     <div className="flex flex-col lg:flex-row gap-12 items-center">
 
                         {/* Infos Boutique */}
-                        <div className="lg:w-1/2 space-y-8">
-                            <div className="inline-block px-3 py-1 border border-primary/30 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-2">
+                        <div className="lg:w-1/2 w-full space-y-8">
+                            <div className="inline-block px-3 py-1 bg-primary/20 border border-primary/40 rounded-full text-primary text-xs font-bold uppercase tracking-wider mb-2">
                                 Localisation
                             </div>
                             <h2 className="text-4xl md:text-6xl font-black text-white uppercase leading-none">
-                                L'Atelier <br /> <span className="text-gray-700">Toulousain</span>
+                                <span className="bg-gradient-to-b from-white to-gray-500 bg-clip-text text-transparent">L'ATELIER</span> <br />
+                                <span className="text-primary drop-shadow-[0_0_15px_rgba(255,0,0,0.5)]">TOULOUSAIN</span>
                             </h2>
                             <p className="text-gray-400 text-lg font-light max-w-md">
-                                Situé en plein cœur de Toulouse, notre atelier-boutique vous accueille sans rendez-vous pour toutes vos réparations et achats.
+                                Situé à Bellefontaine, notre atelier vous accueille pour toutes vos réparations et achats.
                             </p>
 
-                            <div className="space-y-6 pt-6">
-                                <div className="flex items-start gap-4 group">
-                                    <div className="w-12 h-12 bg-metallic-800 rounded-lg flex items-center justify-center text-2xl border border-white/10 group-hover:border-primary/50 transition-colors">
-                                        📍
-                                    </div>
+                            <div className="space-y-6">
+                                <div className="flex items-start gap-4 p-4 bg-metallic-800/50 rounded-xl border border-white/5 hover:border-primary/30 transition-colors">
+                                    <div className="text-2xl">📍</div>
                                     <div>
-                                        <h4 className="text-white font-bold uppercase text-sm mb-1">Adresse</h4>
-                                        <p className="text-gray-400">14 rue de la République<br />31000 Toulouse</p>
+                                        <h4 className="text-white font-bold text-lg">Adresse</h4>
+                                        <p className="text-gray-400">65 All. de Bellefontaine</p>
+                                        <p className="text-gray-400">31100 Toulouse</p>
                                     </div>
                                 </div>
-                                <div className="flex items-start gap-4 group">
-                                    <div className="w-12 h-12 bg-metallic-800 rounded-lg flex items-center justify-center text-2xl border border-white/10 group-hover:border-primary/50 transition-colors">
-                                        🕒
-                                    </div>
+
+                                <div className="flex items-start gap-4 p-4 bg-metallic-800/50 rounded-xl border border-white/5 hover:border-primary/30 transition-colors">
+                                    <div className="text-2xl">🕒</div>
                                     <div>
-                                        <h4 className="text-white font-bold uppercase text-sm mb-1">Horaires</h4>
-                                        <p className="text-gray-400">Lun - Sam : 10h00 - 19h00<br /><span className="text-primary text-xs font-bold">OUVERT NON-STOP</span></p>
+                                        <h4 className="text-white font-bold text-lg mb-2">Horaires</h4>
+                                        <div className="text-sm text-gray-400 space-y-1">
+                                            <div className="flex justify-between gap-8"><span className="w-20">Lun - Jeu</span> <span>10:00–13:00 / 14:30–20:00</span></div>
+                                            <div className="flex justify-between gap-8"><span className="w-20 text-white font-bold">Vendredi</span> <span className="text-white font-bold">10:00–12:00 / 15:00–20:00</span></div>
+                                            <div className="flex justify-between gap-8"><span className="w-20">Samedi</span> <span>10:00–13:00 / 14:30–20:00</span></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
                             <a
-                                href="https://www.google.com/maps/search/?api=1&query=Belfontel+Toulouse"
+                                href="https://www.google.com/maps/search/?api=1&query=65+Allée+de+Bellefontaine+31100+Toulouse"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center gap-3 text-white font-bold uppercase tracking-wider hover:text-primary transition-colors mt-4 group"
@@ -396,19 +431,18 @@ const Home = () => {
                             </a>
                         </div>
 
-                        {/* Carte Interactive Stylisée */}
+                        {/* Carte Interactive Stylisée (Nettoyée) */}
                         <div className="lg:w-1/2 w-full h-[400px] lg:h-[500px] relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl group">
-                            <div className="absolute inset-0 bg-metallic-900 animate-pulse z-0"></div>
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2889.020586076266!2d1.4328!3d43.6045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aebb6fec755555%3A0x406f69c2f411030!2sToulouse!5e0!3m2!1sfr!2sfr!4v1620000000000!5m2!1sfr!2sfr"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2890.662279146!2d1.4026!3d43.5724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aebb6fec755555%3A0x0!2s65+All.+de+Bellefontaine%2C+31100+Toulouse!5e0!3m2!1sfr!2sfr!4v1620000000000!5m2!1sfr!2sfr"
                                 width="100%"
                                 height="100%"
                                 loading="lazy"
-                                className="absolute inset-0 w-full h-full border-0 filter invert contrast-125 brightness-75 grayscale hover:grayscale-0 transition-all duration-700 z-10 opacity-90 hover:opacity-100"
+                                className="absolute inset-0 w-full h-full border-0 z-10"
                             ></iframe>
 
-                            {/* Overlay Tech */}
-                            <div className="absolute bottom-6 left-6 z-20 bg-black/80 backdrop-blur-md px-4 py-2 rounded border border-white/10 flex items-center gap-2">
+                            {/* Overlay Tech Discret */}
+                            <div className="absolute bottom-6 left-6 z-20 bg-black/80 backdrop-blur-md px-4 py-2 rounded border border-white/10 flex items-center gap-2 pointer-events-none">
                                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                                 <span className="text-xs font-bold text-white uppercase">En direct de l'atelier</span>
                             </div>
@@ -427,8 +461,8 @@ const Home = () => {
                         <span className="skew-x-[10deg] inline-block">Contactez-nous</span>
                     </Link>
                 </div>
-            </section>
-        </div>
+            </section >
+        </div >
     );
 };
 

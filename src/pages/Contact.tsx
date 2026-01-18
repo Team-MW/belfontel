@@ -28,7 +28,7 @@ const Contact = () => {
         <div className="min-h-screen pt-24">
             <SEO
                 title="Contact & Rendez-vous"
-                description="Contactez BELFONTEL Toulouse. Devis gratuit, prise de rendez-vous réparation ou simple question. Nous sommes à votre écoute."
+                description="Boutique Belfontel : 65 All. de Bellefontaine, 31100 Toulouse. Ouvert du Lundi au Samedi. Appelez-nous au 05 32 59 59 06 pour un devis urgent. Nous sommes à votre écoute."
             />
 
             {/* Hero Simple */}
@@ -73,8 +73,8 @@ const Contact = () => {
                                         </div>
                                         <div>
                                             <p className="font-bold text-white text-lg">BELFONTEL Toulouse</p>
-                                            <p>14 rue de la République</p>
-                                            <p>31000 Toulouse, France</p>
+                                            <p>65 All. de Bellefontaine</p>
+                                            <p>31100 Toulouse, France</p>
                                         </div>
                                     </div>
 
@@ -84,7 +84,11 @@ const Contact = () => {
                                         </div>
                                         <div>
                                             <p className="font-bold text-white text-lg">05 61 00 00 00</p>
-                                            <p className="text-sm text-gray-500">Du Lundi au Samedi (9h - 19h)</p>
+                                            <div className="text-sm text-gray-500 mt-1 space-y-1">
+                                                <p>Lundi - Jeudi : 10h00–13h00 / 14h30–20h00</p>
+                                                <p className="text-primary font-bold">Vendredi : 10h00–12h00 / 15h00–20h00</p>
+                                                <p>Samedi : 10h00–13h00 / 14h30–20h00</p>
+                                            </div>
                                         </div>
                                     </div>
 
@@ -210,16 +214,21 @@ const Contact = () => {
 
                     </div>
 
-                    {/* Fake Map Style Tech */}
-                    <div className="mt-20 relative h-[300px] w-full rounded-2xl overflow-hidden border border-white/10 grayscale hover:grayscale-0 transition-all duration-700 opacity-80 hover:opacity-100">
+                    {/* Carte Interactive Stylisée */}
+                    <div className="mt-20 lg:w-full w-full h-[400px] lg:h-[500px] relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl group">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2889.020586076266!2d1.4328!3d43.6045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aebb6fec755555%3A0x406f69c2f411030!2sToulouse!5e0!3m2!1sfr!2sfr!4v1620000000000!5m2!1sfr!2sfr"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2890.662279146!2d1.4026!3d43.5724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aebb6fec755555%3A0x0!2s65+All.+de+Bellefontaine%2C+31100+Toulouse!5e0!3m2!1sfr!2sfr!4v1620000000000!5m2!1sfr!2sfr"
                             width="100%"
                             height="100%"
                             loading="lazy"
-                            className="absolute inset-0 border-0 filter invert contrast-125 brightness-75" // Carte "Dark Mode" hack
+                            className="absolute inset-0 w-full h-full border-0 z-10"
                         ></iframe>
-                        <div className="absolute inset-0 pointer-events-none border-4 border-metallic-900/50 rounded-2xl shadow-inner"></div>
+
+                        {/* Overlay Tech Discret */}
+                        <div className="absolute bottom-6 left-6 z-20 bg-black/80 backdrop-blur-md px-4 py-2 rounded border border-white/10 flex items-center gap-2 pointer-events-none">
+                            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                            <span className="text-xs font-bold text-white uppercase">En direct de l'atelier</span>
+                        </div>
                     </div>
                 </div>
             </section>
