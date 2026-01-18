@@ -1,15 +1,26 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
-import { useEffect } from 'react';
+import { useEffect, lazy, Suspense } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Home from './pages/Home';
-import Services from './pages/Services';
-import Portfolio from './pages/Portfolio';
-import Contact from './pages/Contact';
 
-import MentionsLegales from './pages/MentionsLegales';
-import Confidentialite from './pages/Confidentialite';
+// Lazy loading des pages pour optimiser les performances
+const Home = lazy(() => import('./pages/Home'));
+const Services = lazy(() => import('./pages/Services'));
+const Portfolio = lazy(() => import('./pages/Portfolio'));
+const Contact = lazy(() => import('./pages/Contact'));
+const MentionsLegales = lazy(() => import('./pages/MentionsLegales'));
+const Confidentialite = lazy(() => import('./pages/Confidentialite'));
+
+// Composant de chargement léger
+const PageLoader = () => (
+  <div className="flex h-screen w-full items-center justify-center bg-black">
+    <div className="flex flex-col items-center gap-4">
+      <div className="w-12 h-12 border-4 border-primary/30 border-t-primary rounded-full animate-spin"></div>
+      <p className="text-gray-500 text-sm font-mono animate-pulse">CHARGEMENT...</p>
+    </div>
+  </div>
+);
 
 // Composant pour mettre à jour les meta tags
 const PageTransition = ({ children }: { children: React.ReactNode }) => {
@@ -46,16 +57,18 @@ function AppContent() {
     <>
       <ScrollToTop />
       <Header />
-      <PageTransition>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/mentions-legales" element={<MentionsLegales />} />
-          <Route path="/confidentialite" element={<Confidentialite />} />
-        </Routes>
-      </PageTransition>
+      <Suspense fallback={<PageLoader />}>
+        <PageTransition>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/mentions-legales" element={<MentionsLegales />} />
+            <Route path="/confidentialite" element={<Confidentialite />} />
+          </Routes>
+        </PageTransition>
+      </Suspense>
       <Footer />
     </>
   );

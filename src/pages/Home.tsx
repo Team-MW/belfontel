@@ -168,7 +168,7 @@ const Home = () => {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 1, delay: 0.5 }}
                         >
-                            <div className="relative z-10 transform lg:rotate-[-5deg] lg:hover:rotate-0 transition-transform duration-700 scale-100 lg:scale-[1.6] origin-center lg:translate-y-8 lg:translate-x-[-2%]">
+                            <div className="relative z-10 transform lg:rotate-[-5deg] lg:hover:rotate-0 transition-transform duration-700 scale-100 lg:scale-[1.6] origin-center lg:translate-y-8 lg:translate-x-[-2%] will-change-transform">
                                 <motion.div
                                     initial={{ opacity: 0, x: 50 }}
                                     animate={{ opacity: 1, x: 0, y: [0, -20, 0], rotate: [0, 2, -2, 0] }}
@@ -200,16 +200,16 @@ const Home = () => {
             {/* BANDEAU MARQUES XXL (Marquee) */}
             <section className="py-6 bg-white/5 border-y border-white/5 overflow-hidden relative">
                 <div className="absolute inset-0 bg-metallic-900/80 backdrop-blur-sm"></div>
-                <div className="relative z-10 flex gap-12 items-center animate-marquee whitespace-nowrap">
-                    {/* Duplication augmentée pour fluidité totale infinie */}
-                    {[...Array(6)].map((_, i) => (
+                <div className="relative z-10 flex gap-12 items-center animate-marquee whitespace-nowrap transform-gpu will-change-transform">
+                    {/* Duplication optimisée */}
+                    {[...Array(4)].map((_, i) => (
                         <div key={i} className="flex gap-12 items-center flex-shrink-0">
-                            <img src="/assets/14415.png" alt="Brand" className="h-10 md:h-14 opacity-80 hover:opacity-100 transition-all duration-500 hover:scale-110 cursor-pointer" />
-                            <img src="/assets/samsung-logo-samsung-icon-transparent-free-png.webp" alt="Samsung" className="h-10 md:h-14 opacity-80 hover:opacity-100 transition-all duration-500 hover:scale-110 cursor-pointer" />
-                            <img src="/assets/mi-xiaomi-transparent-mi-xiaomi-free-free-png.webp" alt="Xiaomi" className="h-10 md:h-14 opacity-80 hover:opacity-100 transition-all duration-500 hover:scale-110 cursor-pointer" />
-                            <img src="/assets/1443.png" alt="Brand" className="h-8 md:h-10 opacity-80 hover:opacity-100 transition-all duration-500 hover:scale-110 cursor-pointer" />
-                            <img src="/assets/Nintendo_switch_logo.png" alt="Nintendo" className="h-8 md:h-10 opacity-80 hover:opacity-100 transition-all duration-500 hover:scale-110 cursor-pointer" />
-                            <img src="/assets/226770.png" alt="Brand" className="h-10 md:h-14 opacity-80 hover:opacity-100 transition-all duration-500 hover:scale-110 cursor-pointer" />
+                            <img loading="lazy" decoding="async" src="/assets/14415.png" alt="Brand" className="h-10 md:h-14 opacity-80 hover:opacity-100 transition-all duration-500 hover:scale-110 cursor-pointer" />
+                            <img loading="lazy" decoding="async" src="/assets/samsung-logo-samsung-icon-transparent-free-png.webp" alt="Samsung" className="h-10 md:h-14 opacity-80 hover:opacity-100 transition-all duration-500 hover:scale-110 cursor-pointer" />
+                            <img loading="lazy" decoding="async" src="/assets/mi-xiaomi-transparent-mi-xiaomi-free-free-png.webp" alt="Xiaomi" className="h-10 md:h-14 opacity-80 hover:opacity-100 transition-all duration-500 hover:scale-110 cursor-pointer" />
+                            <img loading="lazy" decoding="async" src="/assets/1443.png" alt="Brand" className="h-8 md:h-10 opacity-80 hover:opacity-100 transition-all duration-500 hover:scale-110 cursor-pointer" />
+                            <img loading="lazy" decoding="async" src="/assets/Nintendo_switch_logo.png" alt="Nintendo" className="h-8 md:h-10 opacity-80 hover:opacity-100 transition-all duration-500 hover:scale-110 cursor-pointer" />
+                            <img loading="lazy" decoding="async" src="/assets/226770.png" alt="Brand" className="h-10 md:h-14 opacity-80 hover:opacity-100 transition-all duration-500 hover:scale-110 cursor-pointer" />
                         </div>
                     ))}
                 </div>
