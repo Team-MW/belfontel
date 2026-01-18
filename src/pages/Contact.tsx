@@ -277,19 +277,25 @@ const Contact = () => {
                 <div className="container-custom">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                         <div className="p-6">
-                            <div className="text-3xl mb-4">🅿️</div>
-                            <h4 className="text-white font-bold mb-2">Parking</h4>
-                            <p className="text-gray-400 text-sm">Parking Esquirol ou Indigo Carmes à 2 minutes à pied.</p>
+                            <div className="text-3xl mb-4">🚶🚇</div>
+                            <h4 className="text-white font-bold mb-2">Accès Piéton & Métro</h4>
+                            <div className="text-gray-300 text-base space-y-3">
+                                <p><strong className="text-primary text-lg">Bellefontaine :</strong><br />Métro Ligne A, station Bellefontaine (2 min à pied). Accès direct par le parvis.</p>
+                                <p><strong className="text-primary text-lg">Borderouge :</strong><br />Métro Ligne B, station Borderouge (5 min à pied). C.Cial Les Maourines.</p>
+                            </div>
                         </div>
                         <div className="p-6 border-x border-white/5">
-                            <div className="text-3xl mb-4">💳</div>
-                            <h4 className="text-white font-bold mb-2">Paiement</h4>
-                            <p className="text-gray-400 text-sm">CB, Espèces, Apple Pay et Paiement en 3x ou 4x sans frais.</p>
+                            <div className="text-3xl mb-4">🚗🅿️</div>
+                            <h4 className="text-white font-bold mb-4 text-xl">Parking Facile</h4>
+                            <div className="text-gray-300 text-base space-y-3">
+                                <p><strong className="text-primary text-lg">Bellefontaine :</strong><br />Nombreuses places de parking gratuites à proximité immédiate.</p>
+                                <p><strong className="text-primary text-lg">Borderouge :</strong><br />Parking Souterrain Indigo Les Maourines (1h gratuite).</p>
+                            </div>
                         </div>
                         <div className="p-6">
-                            <div className="text-3xl mb-4">🚇</div>
-                            <h4 className="text-white font-bold mb-2">Métro</h4>
-                            <p className="text-gray-400 text-sm">Ligne A station Esquirol ou Ligne B station Carmes.</p>
+                            <div className="text-3xl mb-4">💳</div>
+                            <h4 className="text-white font-bold mb-4 text-xl">Paiement</h4>
+                            <p className="text-gray-300 text-base">CB, Espèces, Apple Pay et Paiement en 3x ou 4x sans frais.</p>
                         </div>
                     </div>
                 </div>

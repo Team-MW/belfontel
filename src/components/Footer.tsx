@@ -21,7 +21,7 @@ const Footer = () => {
 
     return (
         <footer className="bg-metallic-900 border-t border-metallic-700 mt-0">
-            <div className="container-custom pt-24 pb-20">
+            <div className="container-custom pt-40 pb-20">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
                     {/* Colonne 1: Logo et description */}
                     <motion.div

@@ -129,8 +129,8 @@ const Home = () => {
                             </motion.h1>
 
                             <motion.p variants={fadeInUp} className="text-lg lg:text-xl text-gray-400 mb-8 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
-                                Expert en <strong>réparation express</strong>, vente de <strong>smartphones premium</strong> et accessoires high-tech.
-                                Redonnez vie à votre appareil ou passez au niveau supérieur avec BELPHONETEL.
+                                Retrouvez l'expertise BELPHONETEL près de chez vous.
+                                Nous vous accueillons <strong>SANS RENDEZ-VOUS</strong> dans nos ateliers de <strong className="text-white text-2xl uppercase">BELLEFONTAINE</strong> et <strong className="text-white text-2xl uppercase">BORDEROUGE</strong>.
                             </motion.p>
 
                             <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -405,7 +405,11 @@ const Home = () => {
                                         <div>
                                             <h4 className="text-white font-bold text-lg text-primary">Atelier Bellefontaine</h4>
                                             <p className="text-gray-300 font-medium">65 All. de Bellefontaine</p>
-                                            <p className="text-gray-400">31100 Toulouse</p>
+                                            <p className="text-gray-400 text-sm mb-2">31100 Toulouse</p>
+                                            <p className="text-xs text-gray-400 flex items-center gap-2 mt-2 pt-2 border-t border-white/5 leading-snug">
+                                                <span className="text-base">🚇</span>
+                                                <span>Métro <strong>Ligne A</strong> - Bellefontaine (2 min).<br />Accès direct par le parvis.</span>
+                                            </p>
                                         </div>
                                     </div>
                                     <div className="pl-10">
@@ -422,7 +426,11 @@ const Home = () => {
                                         <div>
                                             <h4 className="text-white font-bold text-lg text-primary">Atelier Borderouge</h4>
                                             <p className="text-gray-300 font-medium">C.cial Les Maourines</p>
-                                            <p className="text-gray-400">33 Bd André Netwiller, 31200 Toulouse</p>
+                                            <p className="text-gray-400 text-sm mb-2">33 Bd André Netwiller, 31200 Toulouse</p>
+                                            <p className="text-xs text-gray-400 flex items-center gap-2 mt-2 pt-2 border-t border-white/5 leading-snug">
+                                                <span className="text-base">🚇</span>
+                                                <span>Métro <strong>Ligne B</strong> - Borderouge (5 min).<br />C.Cial Les Maourines.</span>
+                                            </p>
                                         </div>
                                     </div>
                                     <div className="pl-10">
