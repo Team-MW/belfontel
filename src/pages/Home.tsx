@@ -68,13 +68,13 @@ const Home = () => {
                         <div className="flex gap-8 items-center animate-marquee whitespace-nowrap">
                             {[...Array(3)].map((_, i) => (
                                 <div key={i} className="flex gap-8 items-center">
-                                    <img src="/src/assets/14415.png" alt="Brand" className="h-6 opacity-80" />
-                                    <img src="/src/assets/samsung-logo-samsung-icon-transparent-free-png.webp" alt="Samsung" className="h-6 opacity-80" />
-                                    <img src="/src/assets/mi-xiaomi-transparent-mi-xiaomi-free-free-png.webp" alt="Xiaomi" className="h-6 opacity-80" />
-                                    <img src="/src/assets/1443.png" alt="Brand" className="h-5 opacity-80" />
-                                    <img src="/src/assets/Nintendo_switch_logo.png" alt="Nintendo" className="h-5 opacity-80" />
-                                    <img src="/src/assets/226770.png" alt="Brand" className="h-6 opacity-80" />
-                                    <img src="/src/assets/747.png" alt="Brand" className="h-6 opacity-80" />
+                                    <img src="/assets/14415.png" alt="Brand" className="h-6 opacity-80" />
+                                    <img src="/assets/samsung-logo-samsung-icon-transparent-free-png.webp" alt="Samsung" className="h-6 opacity-80" />
+                                    <img src="/assets/mi-xiaomi-transparent-mi-xiaomi-free-free-png.webp" alt="Xiaomi" className="h-6 opacity-80" />
+                                    <img src="/assets/1443.png" alt="Brand" className="h-5 opacity-80" />
+                                    <img src="/assets/Nintendo_switch_logo.png" alt="Nintendo" className="h-5 opacity-80" />
+                                    <img src="/assets/226770.png" alt="Brand" className="h-6 opacity-80" />
+                                    <img src="/assets/747.png" alt="Brand" className="h-6 opacity-80" />
                                 </div>
                             ))}
                         </div>
@@ -117,13 +117,13 @@ const Home = () => {
                                     {/* Dupliquer les logos pour l'effet infini */}
                                     {[...Array(2)].map((_, i) => (
                                         <div key={i} className="flex gap-12 items-center">
-                                            <img src="/src/assets/14415.png" alt="Brand 1" className="h-8 md:h-10 opacity-80 hover:opacity-100 transition-opacity" />
-                                            <img src="/src/assets/samsung-logo-samsung-icon-transparent-free-png.webp" alt="Samsung" className="h-8 md:h-10 opacity-80 hover:opacity-100 transition-opacity" />
-                                            <img src="/src/assets/mi-xiaomi-transparent-mi-xiaomi-free-free-png.webp" alt="Xiaomi" className="h-8 md:h-10 opacity-80 hover:opacity-100 transition-opacity" />
-                                            <img src="/src/assets/1443.png" alt="Brand 2" className="h-6 md:h-8 opacity-80 hover:opacity-100 transition-opacity" />
-                                            <img src="/src/assets/Nintendo_switch_logo.png" alt="Nintendo" className="h-6 md:h-8 opacity-80 hover:opacity-100 transition-opacity" />
-                                            <img src="/src/assets/226770.png" alt="Brand 3" className="h-8 md:h-10 opacity-80 hover:opacity-100 transition-opacity" />
-                                            <img src="/src/assets/747.png" alt="Brand 4" className="h-8 md:h-10 opacity-80 hover:opacity-100 transition-opacity" />
+                                            <img src="/assets/14415.png" alt="Brand 1" className="h-8 md:h-10 opacity-80 hover:opacity-100 transition-opacity" />
+                                            <img src="/assets/samsung-logo-samsung-icon-transparent-free-png.webp" alt="Samsung" className="h-8 md:h-10 opacity-80 hover:opacity-100 transition-opacity" />
+                                            <img src="/assets/mi-xiaomi-transparent-mi-xiaomi-free-free-png.webp" alt="Xiaomi" className="h-8 md:h-10 opacity-80 hover:opacity-100 transition-opacity" />
+                                            <img src="/assets/1443.png" alt="Brand 2" className="h-6 md:h-8 opacity-80 hover:opacity-100 transition-opacity" />
+                                            <img src="/assets/Nintendo_switch_logo.png" alt="Nintendo" className="h-6 md:h-8 opacity-80 hover:opacity-100 transition-opacity" />
+                                            <img src="/assets/226770.png" alt="Brand 3" className="h-8 md:h-10 opacity-80 hover:opacity-100 transition-opacity" />
+                                            <img src="/assets/747.png" alt="Brand 4" className="h-8 md:h-10 opacity-80 hover:opacity-100 transition-opacity" />
                                         </div>
                                     ))}
                                 </div>
@@ -141,7 +141,7 @@ const Home = () => {
                                 <div className="absolute inset-0 bg-gradient-to-tr from-primary to-transparent opacity-20 blur-3xl transform scale-110"></div>
                                 <div className="drop-shadow-2xl">
                                     <img
-                                        src="/src/assets/iphone.png"
+                                        src="/assets/iphone.png"
                                         alt="iPhone Premium Belfontel"
                                         className="w-3/4 md:w-1/2 lg:w-full h-auto max-w-[300px] lg:max-w-[800px] mx-auto filter drop-shadow-[0_0_30px_rgba(255,31,31,0.3)] lg:drop-shadow-[0_0_50px_rgba(255,31,31,0.5)]"
                                     />
@@ -164,12 +164,12 @@ const Home = () => {
                     {/* Duplication augmentée pour fluidité totale infinie */}
                     {[...Array(6)].map((_, i) => (
                         <div key={i} className="flex gap-12 items-center flex-shrink-0">
-                            <img src="/src/assets/14415.png" alt="Brand" className="h-10 md:h-14 opacity-80 hover:opacity-100 transition-all duration-500 hover:scale-110 cursor-pointer" />
-                            <img src="/src/assets/samsung-logo-samsung-icon-transparent-free-png.webp" alt="Samsung" className="h-10 md:h-14 opacity-80 hover:opacity-100 transition-all duration-500 hover:scale-110 cursor-pointer" />
-                            <img src="/src/assets/mi-xiaomi-transparent-mi-xiaomi-free-free-png.webp" alt="Xiaomi" className="h-10 md:h-14 opacity-80 hover:opacity-100 transition-all duration-500 hover:scale-110 cursor-pointer" />
-                            <img src="/src/assets/1443.png" alt="Brand" className="h-8 md:h-10 opacity-80 hover:opacity-100 transition-all duration-500 hover:scale-110 cursor-pointer" />
-                            <img src="/src/assets/Nintendo_switch_logo.png" alt="Nintendo" className="h-8 md:h-10 opacity-80 hover:opacity-100 transition-all duration-500 hover:scale-110 cursor-pointer" />
-                            <img src="/src/assets/226770.png" alt="Brand" className="h-10 md:h-14 opacity-80 hover:opacity-100 transition-all duration-500 hover:scale-110 cursor-pointer" />
+                            <img src="/assets/14415.png" alt="Brand" className="h-10 md:h-14 opacity-80 hover:opacity-100 transition-all duration-500 hover:scale-110 cursor-pointer" />
+                            <img src="/assets/samsung-logo-samsung-icon-transparent-free-png.webp" alt="Samsung" className="h-10 md:h-14 opacity-80 hover:opacity-100 transition-all duration-500 hover:scale-110 cursor-pointer" />
+                            <img src="/assets/mi-xiaomi-transparent-mi-xiaomi-free-free-png.webp" alt="Xiaomi" className="h-10 md:h-14 opacity-80 hover:opacity-100 transition-all duration-500 hover:scale-110 cursor-pointer" />
+                            <img src="/assets/1443.png" alt="Brand" className="h-8 md:h-10 opacity-80 hover:opacity-100 transition-all duration-500 hover:scale-110 cursor-pointer" />
+                            <img src="/assets/Nintendo_switch_logo.png" alt="Nintendo" className="h-8 md:h-10 opacity-80 hover:opacity-100 transition-all duration-500 hover:scale-110 cursor-pointer" />
+                            <img src="/assets/226770.png" alt="Brand" className="h-10 md:h-14 opacity-80 hover:opacity-100 transition-all duration-500 hover:scale-110 cursor-pointer" />
                         </div>
                     ))}
                 </div>
