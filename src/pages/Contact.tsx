@@ -1,22 +1,23 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import SEO from '../components/SEO';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
-        subject: '',
+        phone: '',
+        device: '',
         message: '',
     });
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        console.log('Form submitted:', formData);
-        // Ici vous ajouterez la logique d'envoi du formulaire
-        alert('Message envoyé ! Nous vous répondrons bientôt.');
+        // Simulation d'envoi
+        alert('Message envoyé au technicien ! Nous vous rappelons rapidement.');
     };
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         setFormData({
             ...formData,
             [e.target.name]: e.target.value,
@@ -25,149 +26,223 @@ const Contact = () => {
 
     return (
         <div className="min-h-screen pt-24">
-            {/* Hero Section */}
-            <section className="section-dark py-20 grid-pattern">
-                <div className="container-custom">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
+            <SEO
+                title="Contact & Rendez-vous"
+                description="Contactez BELFONTEL Toulouse. Devis gratuit, prise de rendez-vous réparation ou simple question. Nous sommes à votre écoute."
+            />
+
+            {/* Hero Simple */}
+            <section className="section-dark py-16 grid-pattern border-b border-white/5">
+                <div className="container-custom text-center">
+                    <motion.h1
+                        initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                        className="text-center max-w-3xl mx-auto"
+                        className="text-4xl md:text-6xl font-black mb-4 text-white uppercase"
                     >
-                        <h1 className="text-5xl md:text-6xl font-bold mb-6 neon-text">Contact</h1>
-                        <p className="text-xl text-gray-300">
-                            Parlons de votre projet et donnons vie à vos idées
-                        </p>
-                    </motion.div>
+                        Besoin d'un <span className="text-primary">Diagnostic ?</span>
+                    </motion.h1>
+                    <p className="text-gray-400 max-w-2xl mx-auto">
+                        Passez nous voir en boutique sans rendez-vous ou envoyez-nous un message pour réserver votre créneau.
+                    </p>
                 </div>
             </section>
 
-            {/* Contact Form */}
             <section className="section-light py-20">
                 <div className="container-custom">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                        {/* Formulaire */}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+
+                        {/* Zone Informations (Gauche) */}
                         <motion.div
-                            initial={{ opacity: 0, x: -50 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6 }}
-                        >
-                            <form onSubmit={handleSubmit} className="space-y-6">
-                                <div>
-                                    <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                                        Nom complet
-                                    </label>
-                                    <input
-                                        type="text"
-                                        id="name"
-                                        name="name"
-                                        value={formData.name}
-                                        onChange={handleChange}
-                                        required
-                                        className="w-full bg-metallic-800 border border-metallic-600 rounded-lg px-4 py-3 text-gray-300 focus:outline-none focus:border-primary transition-colors"
-                                        placeholder="Jean Dupont"
-                                    />
-                                </div>
-
-                                <div>
-                                    <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                                        Email
-                                    </label>
-                                    <input
-                                        type="email"
-                                        id="email"
-                                        name="email"
-                                        value={formData.email}
-                                        onChange={handleChange}
-                                        required
-                                        className="w-full bg-metallic-800 border border-metallic-600 rounded-lg px-4 py-3 text-gray-300 focus:outline-none focus:border-primary transition-colors"
-                                        placeholder="jean@exemple.com"
-                                    />
-                                </div>
-
-                                <div>
-                                    <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">
-                                        Sujet
-                                    </label>
-                                    <input
-                                        type="text"
-                                        id="subject"
-                                        name="subject"
-                                        value={formData.subject}
-                                        onChange={handleChange}
-                                        required
-                                        className="w-full bg-metallic-800 border border-metallic-600 rounded-lg px-4 py-3 text-gray-300 focus:outline-none focus:border-primary transition-colors"
-                                        placeholder="Demande de devis"
-                                    />
-                                </div>
-
-                                <div>
-                                    <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                                        Message
-                                    </label>
-                                    <textarea
-                                        id="message"
-                                        name="message"
-                                        value={formData.message}
-                                        onChange={handleChange}
-                                        required
-                                        rows={6}
-                                        className="w-full bg-metallic-800 border border-metallic-600 rounded-lg px-4 py-3 text-gray-300 focus:outline-none focus:border-primary transition-colors resize-none"
-                                        placeholder="Décrivez votre projet..."
-                                    />
-                                </div>
-
-                                <button type="submit" className="btn-primary w-full">
-                                    Envoyer le message
-                                </button>
-                            </form>
-                        </motion.div>
-
-                        {/* Informations de contact */}
-                        <motion.div
-                            initial={{ opacity: 0, x: 50 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6 }}
+                            initial={{ opacity: 0, x: -30 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.2 }}
                             className="space-y-8"
                         >
-                            <div className="glass-card">
-                                <h3 className="text-2xl font-bold mb-6 text-primary">Informations</h3>
-                                <div className="space-y-4">
-                                    <div className="flex items-start gap-4">
-                                        <div className="text-2xl">📧</div>
+                            {/* Carte Info Principale */}
+                            <div className="glass-card p-8 border-l-4 border-l-primary relative overflow-hidden">
+                                <div className="absolute top-0 right-0 p-4 opacity-5 text-9xl select-none pointer-events-none">📍</div>
+                                <h3 className="text-2xl font-bold text-white mb-6 uppercase flex items-center gap-3">
+                                    <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                                    L'Atelier
+                                </h3>
+
+                                <div className="space-y-6 text-gray-300">
+                                    <div className="flex gap-4">
+                                        <div className="w-12 h-12 rounded bg-metallic-800 flex items-center justify-center text-2xl flex-shrink-0 border border-white/10">
+                                            🏢
+                                        </div>
                                         <div>
-                                            <h4 className="font-semibold text-white mb-1">Email</h4>
-                                            <p className="text-gray-400">contact@belfontel.com</p>
+                                            <p className="font-bold text-white text-lg">BELFONTEL Toulouse</p>
+                                            <p>14 rue de la République</p>
+                                            <p>31000 Toulouse, France</p>
                                         </div>
                                     </div>
-                                    <div className="flex items-start gap-4">
-                                        <div className="text-2xl">📱</div>
+
+                                    <div className="flex gap-4">
+                                        <div className="w-12 h-12 rounded bg-metallic-800 flex items-center justify-center text-2xl flex-shrink-0 border border-white/10">
+                                            📞
+                                        </div>
                                         <div>
-                                            <h4 className="font-semibold text-white mb-1">Téléphone</h4>
-                                            <p className="text-gray-400">+33 1 23 45 67 89</p>
+                                            <p className="font-bold text-white text-lg">05 61 00 00 00</p>
+                                            <p className="text-sm text-gray-500">Du Lundi au Samedi (9h - 19h)</p>
                                         </div>
                                     </div>
-                                    <div className="flex items-start gap-4">
-                                        <div className="text-2xl">📍</div>
+
+                                    <div className="flex gap-4">
+                                        <div className="w-12 h-12 rounded bg-metallic-800 flex items-center justify-center text-2xl flex-shrink-0 border border-white/10">
+                                            📧
+                                        </div>
                                         <div>
-                                            <h4 className="font-semibold text-white mb-1">Adresse</h4>
-                                            <p className="text-gray-400">123 Avenue de l'Innovation<br />75001 Paris, France</p>
+                                            <p className="font-bold text-white text-lg">contact@belfontel.com</p>
+                                            <p className="text-sm text-gray-500">Réponse sous 24h</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="glass-card">
-                                <h3 className="text-2xl font-bold mb-4 text-primary">Horaires</h3>
-                                <div className="space-y-2 text-gray-400">
-                                    <p>Lundi - Vendredi: 9h00 - 18h00</p>
-                                    <p>Samedi: 10h00 - 16h00</p>
-                                    <p>Dimanche: Fermé</p>
+                            {/* Horaires */}
+                            <div className="bg-metallic-800 p-8 rounded-2xl border border-white/5">
+                                <h3 className="text-xl font-bold text-white mb-4 uppercase">Horaires d'ouverture</h3>
+                                <div className="space-y-2 text-sm">
+                                    <div className="flex justify-between text-gray-300 border-b border-white/5 pb-2">
+                                        <span>Lundi - Vendredi</span>
+                                        <span className="font-bold text-white">09:30 - 19:00</span>
+                                    </div>
+                                    <div className="flex justify-between text-gray-300 border-b border-white/5 pb-2">
+                                        <span>Samedi</span>
+                                        <span className="font-bold text-white">10:00 - 18:00</span>
+                                    </div>
+                                    <div className="flex justify-between text-gray-500">
+                                        <span>Dimanche</span>
+                                        <span>Fermé</span>
+                                    </div>
                                 </div>
                             </div>
+
                         </motion.div>
+
+                        {/* Formulaire (Droite) */}
+                        <motion.div
+                            initial={{ opacity: 0, x: 30 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.4 }}
+                        >
+                            <div className="glass-card p-8 md:p-10 relative">
+                                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+                                <h3 className="text-2xl font-bold text-white mb-2 uppercase">Envoyer un message</h3>
+                                <p className="text-gray-400 mb-8 text-sm">Remplissez ce formulaire pour une demande de devis ou d'information.</p>
+
+                                <form onSubmit={handleSubmit} className="space-y-5">
+                                    <div className="grid grid-cols-2 gap-5">
+                                        <div className="space-y-1">
+                                            <label className="text-xs font-bold text-gray-500 uppercase ml-1">Nom</label>
+                                            <input
+                                                type="text"
+                                                name="name"
+                                                value={formData.name}
+                                                onChange={handleChange}
+                                                className="w-full bg-metallic-900 border border-metallic-700 focus:border-primary rounded px-4 py-3 text-white outline-none transition-colors"
+                                                placeholder="Votre Nom"
+                                                required
+                                            />
+                                        </div>
+                                        <div className="space-y-1">
+                                            <label className="text-xs font-bold text-gray-500 uppercase ml-1">Tél</label>
+                                            <input
+                                                type="tel"
+                                                name="phone"
+                                                value={formData.phone}
+                                                onChange={handleChange}
+                                                className="w-full bg-metallic-900 border border-metallic-700 focus:border-primary rounded px-4 py-3 text-white outline-none transition-colors"
+                                                placeholder="06 00 00 00 00"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div className="space-y-1">
+                                        <label className="text-xs font-bold text-gray-500 uppercase ml-1">Email</label>
+                                        <input
+                                            type="email"
+                                            name="email"
+                                            value={formData.email}
+                                            onChange={handleChange}
+                                            className="w-full bg-metallic-900 border border-metallic-700 focus:border-primary rounded px-4 py-3 text-white outline-none transition-colors"
+                                            placeholder="votre@email.com"
+                                            required
+                                        />
+                                    </div>
+
+                                    <div className="space-y-1">
+                                        <label className="text-xs font-bold text-gray-500 uppercase ml-1">Appareil Concerné</label>
+                                        <select
+                                            name="device"
+                                            value={formData.device}
+                                            onChange={handleChange}
+                                            className="w-full bg-metallic-900 border border-metallic-700 focus:border-primary rounded px-4 py-3 text-white outline-none transition-colors appearance-none"
+                                        >
+                                            <option value="">Sélectionnez un motif...</option>
+                                            <option value="iphone">Réparation iPhone</option>
+                                            <option value="samsung">Réparation Samsung</option>
+                                            <option value="achat">Achat / Vente</option>
+                                            <option value="autre">Autre demande</option>
+                                        </select>
+                                    </div>
+
+                                    <div className="space-y-1">
+                                        <label className="text-xs font-bold text-gray-500 uppercase ml-1">Message</label>
+                                        <textarea
+                                            name="message"
+                                            value={formData.message}
+                                            onChange={handleChange}
+                                            rows={4}
+                                            className="w-full bg-metallic-900 border border-metallic-700 focus:border-primary rounded px-4 py-3 text-white outline-none transition-colors resize-none"
+                                            placeholder="Détaillez votre problème..."
+                                            required
+                                        ></textarea>
+                                    </div>
+
+                                    <button type="submit" className="btn-primary w-full py-4 text-center">
+                                        Envoyer ma demande
+                                    </button>
+                                </form>
+                            </div>
+                        </motion.div>
+
+                    </div>
+
+                    {/* Fake Map Style Tech */}
+                    <div className="mt-20 relative h-[300px] w-full rounded-2xl overflow-hidden border border-white/10 grayscale hover:grayscale-0 transition-all duration-700 opacity-80 hover:opacity-100">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2889.020586076266!2d1.4328!3d43.6045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aebb6fec755555%3A0x406f69c2f411030!2sToulouse!5e0!3m2!1sfr!2sfr!4v1620000000000!5m2!1sfr!2sfr"
+                            width="100%"
+                            height="100%"
+                            loading="lazy"
+                            className="absolute inset-0 border-0 filter invert contrast-125 brightness-75" // Carte "Dark Mode" hack
+                        ></iframe>
+                        <div className="absolute inset-0 pointer-events-none border-4 border-metallic-900/50 rounded-2xl shadow-inner"></div>
+                    </div>
+                </div>
+            </section>
+
+            {/* INFO PRATIQUES */}
+            <section className="py-20 bg-metallic-900 border-t border-white/5">
+                <div className="container-custom">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                        <div className="p-6">
+                            <div className="text-3xl mb-4">🅿️</div>
+                            <h4 className="text-white font-bold mb-2">Parking</h4>
+                            <p className="text-gray-400 text-sm">Parking Esquirol ou Indigo Carmes à 2 minutes à pied.</p>
+                        </div>
+                        <div className="p-6 border-x border-white/5">
+                            <div className="text-3xl mb-4">💳</div>
+                            <h4 className="text-white font-bold mb-2">Paiement</h4>
+                            <p className="text-gray-400 text-sm">CB, Espèces, Apple Pay et Paiement en 3x ou 4x sans frais.</p>
+                        </div>
+                        <div className="p-6">
+                            <div className="text-3xl mb-4">🚇</div>
+                            <h4 className="text-white font-bold mb-2">Métro</h4>
+                            <p className="text-gray-400 text-sm">Ligne A station Esquirol ou Ligne B station Carmes.</p>
+                        </div>
                     </div>
                 </div>
             </section>

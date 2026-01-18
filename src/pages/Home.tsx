@@ -62,6 +62,24 @@ const Home = () => {
                 <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-white/5 rounded-full blur-[100px] pointer-events-none" />
 
                 <div className="container-custom relative z-10 w-full">
+
+                    {/* MARQUEE MOBILE (Collé en haut) */}
+                    <div className="md:hidden w-full overflow-hidden mask-linear-fade relative mb-8 -mt-10 opacity-70">
+                        <div className="flex gap-8 items-center animate-marquee whitespace-nowrap">
+                            {[...Array(3)].map((_, i) => (
+                                <div key={i} className="flex gap-8 items-center">
+                                    <img src="/src/assets/14415.png" alt="Brand" className="h-6 opacity-80" />
+                                    <img src="/src/assets/samsung-logo-samsung-icon-transparent-free-png.webp" alt="Samsung" className="h-6 opacity-80" />
+                                    <img src="/src/assets/mi-xiaomi-transparent-mi-xiaomi-free-free-png.webp" alt="Xiaomi" className="h-6 opacity-80" />
+                                    <img src="/src/assets/1443.png" alt="Brand" className="h-5 opacity-80" />
+                                    <img src="/src/assets/Nintendo_switch_logo.png" alt="Nintendo" className="h-5 opacity-80" />
+                                    <img src="/src/assets/226770.png" alt="Brand" className="h-6 opacity-80" />
+                                    <img src="/src/assets/747.png" alt="Brand" className="h-6 opacity-80" />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
                     <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
                         {/* Texte Hero (Gauche) */}
                         <motion.div
@@ -93,8 +111,8 @@ const Home = () => {
                                 </Link>
                             </motion.div>
 
-                            {/* Brand Marquee Infinite */}
-                            <motion.div variants={fadeInUp} className="mt-12 w-full overflow-hidden mask-linear-fade relative">
+                            {/* Brand Marquee Infinite (DESKTOP ONLY) */}
+                            <motion.div variants={fadeInUp} className="hidden md:block mt-12 w-full overflow-hidden mask-linear-fade relative">
                                 <div className="flex gap-12 items-center animate-marquee whitespace-nowrap">
                                     {/* Dupliquer les logos pour l'effet infini */}
                                     {[...Array(2)].map((_, i) => (
@@ -114,18 +132,18 @@ const Home = () => {
 
                         {/* Visuel Hero (Droite) - Simulation iPhone stylisé */}
                         <motion.div
-                            className="lg:w-2/5 relative hidden lg:block"
+                            className="lg:w-2/5 relative mt-8 lg:mt-0"
                             initial={{ opacity: 0, x: 50 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 1, delay: 0.5 }}
                         >
-                            <div className="relative z-10 transform rotate-[-5deg] hover:rotate-0 transition-transform duration-700 scale-125 lg:scale-[1.6] origin-center translate-y-8 lg:translate-x-[-2%]">
+                            <div className="relative z-10 transform lg:rotate-[-5deg] lg:hover:rotate-0 transition-transform duration-700 scale-100 lg:scale-[1.6] origin-center lg:translate-y-8 lg:translate-x-[-2%]">
                                 <div className="absolute inset-0 bg-gradient-to-tr from-primary to-transparent opacity-20 blur-3xl transform scale-110"></div>
                                 <div className="drop-shadow-2xl">
                                     <img
                                         src="/src/assets/iphone.png"
                                         alt="iPhone Premium Belfontel"
-                                        className="w-full h-auto max-w-[800px] mx-auto filter drop-shadow-[0_0_50px_rgba(255,31,31,0.5)]"
+                                        className="w-3/4 md:w-1/2 lg:w-full h-auto max-w-[300px] lg:max-w-[800px] mx-auto filter drop-shadow-[0_0_30px_rgba(255,31,31,0.3)] lg:drop-shadow-[0_0_50px_rgba(255,31,31,0.5)]"
                                     />
                                 </div>
                             </div>
@@ -140,25 +158,29 @@ const Home = () => {
             </section>
 
             {/* BANDEAU MARQUES XXL (Marquee) */}
-            <section className="py-12 bg-white/5 border-y border-white/5 overflow-hidden relative">
-                <div className="absolute inset-0 bg-metallic-900/50 backdrop-blur-sm"></div>
-                <div className="relative z-10 flex gap-20 items-center animate-marquee whitespace-nowrap">
-                    {/* Duplication triple pour fluidité totale sur grands écrans */}
-                    {[...Array(3)].map((_, i) => (
-                        <div key={i} className="flex gap-20 items-center">
-                            <img src="/src/assets/14415.png" alt="Brand" className="h-12 md:h-20 opacity-80 hover:opacity-100 transition-all duration-500 hover:scale-110 cursor-pointer" />
-                            <img src="/src/assets/samsung-logo-samsung-icon-transparent-free-png.webp" alt="Samsung" className="h-12 md:h-20 opacity-80 hover:opacity-100 transition-all duration-500 hover:scale-110 cursor-pointer" />
-                            <img src="/src/assets/mi-xiaomi-transparent-mi-xiaomi-free-free-png.webp" alt="Xiaomi" className="h-12 md:h-20 opacity-80 hover:opacity-100 transition-all duration-500 hover:scale-110 cursor-pointer" />
-                            <img src="/src/assets/1443.png" alt="Brand" className="h-10 md:h-16 opacity-80 hover:opacity-100 transition-all duration-500 hover:scale-110 cursor-pointer" />
-                            <img src="/src/assets/Nintendo_switch_logo.png" alt="Nintendo" className="h-10 md:h-16 opacity-80 hover:opacity-100 transition-all duration-500 hover:scale-110 cursor-pointer" />
-                            <img src="/src/assets/226770.png" alt="Brand" className="h-12 md:h-20 opacity-80 hover:opacity-100 transition-all duration-500 hover:scale-110 cursor-pointer" />
+            <section className="py-6 bg-white/5 border-y border-white/5 overflow-hidden relative">
+                <div className="absolute inset-0 bg-metallic-900/80 backdrop-blur-sm"></div>
+                <div className="relative z-10 flex gap-12 items-center animate-marquee whitespace-nowrap">
+                    {/* Duplication augmentée pour fluidité totale infinie */}
+                    {[...Array(6)].map((_, i) => (
+                        <div key={i} className="flex gap-12 items-center flex-shrink-0">
+                            <img src="/src/assets/14415.png" alt="Brand" className="h-10 md:h-14 opacity-80 hover:opacity-100 transition-all duration-500 hover:scale-110 cursor-pointer" />
+                            <img src="/src/assets/samsung-logo-samsung-icon-transparent-free-png.webp" alt="Samsung" className="h-10 md:h-14 opacity-80 hover:opacity-100 transition-all duration-500 hover:scale-110 cursor-pointer" />
+                            <img src="/src/assets/mi-xiaomi-transparent-mi-xiaomi-free-free-png.webp" alt="Xiaomi" className="h-10 md:h-14 opacity-80 hover:opacity-100 transition-all duration-500 hover:scale-110 cursor-pointer" />
+                            <img src="/src/assets/1443.png" alt="Brand" className="h-8 md:h-10 opacity-80 hover:opacity-100 transition-all duration-500 hover:scale-110 cursor-pointer" />
+                            <img src="/src/assets/Nintendo_switch_logo.png" alt="Nintendo" className="h-8 md:h-10 opacity-80 hover:opacity-100 transition-all duration-500 hover:scale-110 cursor-pointer" />
+                            <img src="/src/assets/226770.png" alt="Brand" className="h-10 md:h-14 opacity-80 hover:opacity-100 transition-all duration-500 hover:scale-110 cursor-pointer" />
                         </div>
                     ))}
                 </div>
             </section>
 
             {/* Section Snapchat / Réseaux Sociaux */}
-            <section className="py-20 bg-metallic-900 border-y border-white/5 relative overflow-hidden">
+            <section className="py-20 section-dark grid-pattern relative overflow-hidden">
+                {/* Effets lumineux d'ambiance (Background) */}
+                <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
+                <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-white/5 rounded-full blur-[80px] pointer-events-none" />
+
                 <div className="container-custom relative z-10 flex flex-col items-center justify-center text-center">
 
                     <motion.h2
