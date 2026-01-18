@@ -23,18 +23,21 @@ const MentionsLegales = () => {
                             {/* Identité */}
                             <div className="glass-card">
                                 <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                                    <span className="text-primary">01.</span> Éditeur du site
+                                    <span className="text-primary">01.</span> Informations Légales
                                 </h2>
                                 <div className="space-y-4 text-gray-300 font-light">
-                                    <p>Le site <strong>BELFONTEL</strong> est édité par :</p>
+                                    <p>Le site <strong>BELPHONETEL</strong> est édité par :</p>
                                     <ul className="list-disc pl-6 space-y-2">
-                                        <li><strong>Dénomination sociale :</strong> [Nom de votre Société]</li>
-                                        <li><strong>Forme juridique :</strong> [SASU / SAS / SARL / Auto-entreprise]</li>
-                                        <li><strong>Adresse du siège social :</strong> [Votre Adresse Complète]</li>
-                                        <li><strong>Numéro SIRET :</strong> [Votre SIRET]</li>
-                                        <li><strong>RCS :</strong> [Ville] B [Numéro]</li>
-                                        <li><strong>Numéro TVA Intracommunautaire :</strong> [FR XX XXXXXXXX]</li>
-                                        <li><strong>Directeur de la publication :</strong> [Votre Nom]</li>
+                                        <li><strong>Dénomination sociale :</strong> BELPHONETEL</li>
+                                        <li><strong>Forme juridique :</strong> Société à responsabilité limitée (SARL)</li>
+                                        <li><strong>Adresse du siège social :</strong> 65 Allée de Bellefontaine, 31100 Toulouse</li>
+                                        <li><strong>SIREN :</strong> 495 251 530</li>
+                                        <li><strong>SIRET du siège :</strong> 495 251 530 00012</li>
+                                        <li><strong>Numéro de TVA Intracommunautaire :</strong> FR73495251530</li>
+                                        <li><strong>Activité (NAF / APE) :</strong> Conseil pour les affaires et autres conseils de gestion - 7022Z</li>
+                                        <li><strong>Date de création :</strong> 03 avril 2007</li>
+                                        <li><strong>Dirigeant :</strong> Abderramahmane EL ALAOUI</li>
+                                        <li><strong>Source :</strong> Insee RNE (Mise à jour le 17/01/2026)</li>
                                     </ul>
                                 </div>
                             </div>

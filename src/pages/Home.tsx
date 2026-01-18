@@ -384,68 +384,105 @@ const Home = () => {
                 <div className="container-custom relative z-10">
                     <div className="flex flex-col lg:flex-row gap-12 items-center">
 
-                        {/* Infos Boutique */}
+                        {/* Infos Boutiques */}
                         <div className="lg:w-1/2 w-full space-y-8">
                             <div className="inline-block px-3 py-1 bg-primary/20 border border-primary/40 rounded-full text-primary text-xs font-bold uppercase tracking-wider mb-2">
                                 Localisation
                             </div>
-                            <h2 className="text-4xl md:text-6xl font-black text-white uppercase leading-none">
-                                <span className="bg-gradient-to-b from-white to-gray-500 bg-clip-text text-transparent">L'ATELIER</span> <br />
-                                <span className="text-primary drop-shadow-[0_0_15px_rgba(255,0,0,0.5)]">TOULOUSAIN</span>
+                            <h2 className="text-4xl md:text-5xl font-black text-white uppercase leading-none">
+                                <span className="bg-gradient-to-b from-white to-gray-500 bg-clip-text text-transparent">NOS ATELIERS</span> <br />
+                                <span className="text-primary drop-shadow-[0_0_15px_rgba(255,0,0,0.5)]">TOULOUSAINS</span>
                             </h2>
                             <p className="text-gray-400 text-lg font-light max-w-md">
-                                Situé à Bellefontaine, notre atelier vous accueille pour toutes vos réparations et achats.
+                                Deux adresses à Toulouse pour mieux vous servir. Réparations express et vente d'accessoires.
                             </p>
 
                             <div className="space-y-6">
-                                <div className="flex items-start gap-4 p-4 bg-metallic-800/50 rounded-xl border border-white/5 hover:border-primary/30 transition-colors">
-                                    <div className="text-2xl">📍</div>
-                                    <div>
-                                        <h4 className="text-white font-bold text-lg">Adresse</h4>
-                                        <p className="text-gray-400">65 All. de Bellefontaine</p>
-                                        <p className="text-gray-400">31100 Toulouse</p>
-                                    </div>
-                                </div>
-
-                                <div className="flex items-start gap-4 p-4 bg-metallic-800/50 rounded-xl border border-white/5 hover:border-primary/30 transition-colors">
-                                    <div className="text-2xl">🕒</div>
-                                    <div>
-                                        <h4 className="text-white font-bold text-lg mb-2">Horaires</h4>
-                                        <div className="text-sm text-gray-400 space-y-1">
-                                            <div className="flex justify-between gap-8"><span className="w-20">Lun - Jeu</span> <span>10:00–13:00 / 14:30–20:00</span></div>
-                                            <div className="flex justify-between gap-8"><span className="w-20 text-white font-bold">Vendredi</span> <span className="text-white font-bold">10:00–12:00 / 15:00–20:00</span></div>
-                                            <div className="flex justify-between gap-8"><span className="w-20">Samedi</span> <span>10:00–13:00 / 14:30–20:00</span></div>
+                                {/* Boutique 1 : Bellefontaine */}
+                                <div className="p-4 bg-metallic-800/50 rounded-xl border border-white/5 hover:border-primary/30 transition-colors group">
+                                    <div className="flex items-start gap-4 mb-4">
+                                        <div className="text-2xl mt-1">📍</div>
+                                        <div>
+                                            <h4 className="text-white font-bold text-lg text-primary">Atelier Bellefontaine</h4>
+                                            <p className="text-gray-300 font-medium">65 All. de Bellefontaine</p>
+                                            <p className="text-gray-400">31100 Toulouse</p>
                                         </div>
                                     </div>
+                                    <div className="pl-10">
+                                        <a href="https://www.google.com/maps/search/?api=1&query=65+Allée+de+Bellefontaine+31100+Toulouse" target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:text-white font-bold uppercase tracking-wider flex items-center gap-2">
+                                            Y aller <span className="text-lg">→</span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                {/* Boutique 2 : Borderouge */}
+                                <div className="p-4 bg-metallic-800/50 rounded-xl border border-white/5 hover:border-primary/30 transition-colors group">
+                                    <div className="flex items-start gap-4 mb-4">
+                                        <div className="text-2xl mt-1">📍</div>
+                                        <div>
+                                            <h4 className="text-white font-bold text-lg text-primary">Atelier Borderouge</h4>
+                                            <p className="text-gray-300 font-medium">C.cial Les Maourines</p>
+                                            <p className="text-gray-400">33 Bd André Netwiller, 31200 Toulouse</p>
+                                        </div>
+                                    </div>
+                                    <div className="pl-10">
+                                        <a href="https://www.google.com/maps/search/?api=1&query=33+Bd+André+Netwiller+31200+Toulouse" target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:text-white font-bold uppercase tracking-wider flex items-center gap-2">
+                                            Y aller <span className="text-lg">→</span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div className="p-4 bg-metallic-800/20 rounded-xl border border-white/5">
+                                    <h4 className="text-white font-bold text-sm mb-2 uppercase flex items-center gap-2">🕒 Horaires d'ouverture</h4>
+                                    <div className="text-sm text-gray-400 space-y-1">
+                                        <div className="flex justify-between gap-4"><span>Lun - Jeu</span> <span>10:00–13:00 / 14:30–20:00</span></div>
+                                        <div className="flex justify-between gap-4 text-white"><span>Vendredi</span> <span>10:00–12:00 / 15:00–20:00</span></div>
+                                        <div className="flex justify-between gap-4"><span>Samedi</span> <span>10:00–13:00 / 14:30–20:00</span></div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        {/* Zone Cartes (Bellefontaine & Borderouge) */}
+                        <div className="lg:w-1/2 w-full flex flex-col gap-6">
+
+                            {/* Carte 1 : Bellefontaine */}
+                            <div className="w-full h-[250px] relative rounded-2xl overflow-hidden border border-white/10 shadow-lg group">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2890.662279146!2d1.4026!3d43.5724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aebb6fec755555%3A0x0!2s65+All.+de+Bellefontaine%2C+31100+Toulouse!5e0!3m2!1sfr!2sfr!4v1620000000000!5m2!1sfr!2sfr"
+                                    width="100%"
+                                    height="100%"
+                                    loading="lazy"
+                                    className="absolute inset-0 w-full h-full border-0 z-10"
+                                ></iframe>
+                                <div className="absolute top-4 left-4 z-20 bg-black/80 backdrop-blur-md px-3 py-1 rounded border border-white/10 pointer-events-none">
+                                    <span className="text-xs font-bold text-white uppercase">Bellefontaine</span>
+                                </div>
+                                <div className="absolute bottom-4 right-4 z-20 bg-black/80 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 flex items-center gap-2 pointer-events-none">
+                                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                                    <span className="text-[10px] font-bold text-white uppercase">En direct</span>
                                 </div>
                             </div>
 
-                            <a
-                                href="https://www.google.com/maps/search/?api=1&query=65+Allée+de+Bellefontaine+31100+Toulouse"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-3 text-white font-bold uppercase tracking-wider hover:text-primary transition-colors mt-4 group"
-                            >
-                                <span>Itinéraire vers la boutique</span>
-                                <span className="transform group-hover:translate-x-2 transition-transform">→</span>
-                            </a>
-                        </div>
-
-                        {/* Carte Interactive Stylisée (Nettoyée) */}
-                        <div className="lg:w-1/2 w-full h-[400px] lg:h-[500px] relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl group">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2890.662279146!2d1.4026!3d43.5724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aebb6fec755555%3A0x0!2s65+All.+de+Bellefontaine%2C+31100+Toulouse!5e0!3m2!1sfr!2sfr!4v1620000000000!5m2!1sfr!2sfr"
-                                width="100%"
-                                height="100%"
-                                loading="lazy"
-                                className="absolute inset-0 w-full h-full border-0 z-10"
-                            ></iframe>
-
-                            {/* Overlay Tech Discret */}
-                            <div className="absolute bottom-6 left-6 z-20 bg-black/80 backdrop-blur-md px-4 py-2 rounded border border-white/10 flex items-center gap-2 pointer-events-none">
-                                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                                <span className="text-xs font-bold text-white uppercase">En direct de l'atelier</span>
+                            {/* Carte 2 : Borderouge */}
+                            <div className="w-full h-[250px] relative rounded-2xl overflow-hidden border border-white/10 shadow-lg group">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.904836657963!2d1.453272976652438!3d43.63032797110321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aef7838562f795%3A0x6442655555555555!2s33%20Bd%20Andr%C3%A9%20Netwiller%2C%2031200%20Toulouse!5e0!3m2!1sfr!2sfr!4v1705590000000!5m2!1sfr!2sfr"
+                                    width="100%"
+                                    height="100%"
+                                    loading="lazy"
+                                    className="absolute inset-0 w-full h-full border-0 z-10"
+                                ></iframe>
+                                <div className="absolute top-4 left-4 z-20 bg-black/80 backdrop-blur-md px-3 py-1 rounded border border-white/10 pointer-events-none">
+                                    <span className="text-xs font-bold text-white uppercase">Borderouge</span>
+                                </div>
+                                <div className="absolute bottom-4 right-4 z-20 bg-black/80 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 flex items-center gap-2 pointer-events-none">
+                                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                                    <span className="text-[10px] font-bold text-white uppercase">Ouvert</span>
+                                </div>
                             </div>
+
                         </div>
                     </div>
                 </div>

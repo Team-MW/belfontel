@@ -63,27 +63,42 @@ const Contact = () => {
                                 <div className="absolute top-0 right-0 p-4 opacity-5 text-9xl select-none pointer-events-none">📍</div>
                                 <h3 className="text-2xl font-bold text-white mb-6 uppercase flex items-center gap-3">
                                     <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-                                    L'Atelier
+                                    Nos Ateliers
                                 </h3>
 
-                                <div className="space-y-6 text-gray-300">
+                                <div className="space-y-8 text-gray-300">
+                                    {/* Atelier 1 */}
                                     <div className="flex gap-4">
                                         <div className="w-12 h-12 rounded bg-metallic-800 flex items-center justify-center text-2xl flex-shrink-0 border border-white/10">
                                             🏢
                                         </div>
                                         <div>
-                                            <p className="font-bold text-white text-lg">BELFONTEL Toulouse</p>
+                                            <p className="font-bold text-white text-lg">BELPHONETEL Bellefontaine</p>
                                             <p>65 All. de Bellefontaine</p>
-                                            <p>31100 Toulouse, France</p>
+                                            <p>31100 Toulouse</p>
+                                            <a href="https://www.google.com/maps/search/?api=1&query=65+Allée+de+Bellefontaine+31100+Toulouse" target="_blank" rel="noopener noreferrer" className="text-primary text-sm hover:underline mt-1 block font-bold">Voir sur la carte →</a>
                                         </div>
                                     </div>
 
+                                    {/* Atelier 2 */}
                                     <div className="flex gap-4">
+                                        <div className="w-12 h-12 rounded bg-metallic-800 flex items-center justify-center text-2xl flex-shrink-0 border border-white/10">
+                                            🏢
+                                        </div>
+                                        <div>
+                                            <p className="font-bold text-white text-lg">BELPHONETEL Borderouge</p>
+                                            <p>C.cial Les Maourines</p>
+                                            <p>33 Bd André Netwiller, 31200 Toulouse</p>
+                                            <a href="https://www.google.com/maps/search/?api=1&query=33+Bd+André+Netwiller+31200+Toulouse" target="_blank" rel="noopener noreferrer" className="text-primary text-sm hover:underline mt-1 block font-bold">Voir sur la carte →</a>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex gap-4 pt-4 border-t border-white/10">
                                         <div className="w-12 h-12 rounded bg-metallic-800 flex items-center justify-center text-2xl flex-shrink-0 border border-white/10">
                                             📞
                                         </div>
                                         <div>
-                                            <p className="font-bold text-white text-lg">05 61 00 00 00</p>
+                                            <p className="font-bold text-white text-lg">05 32 59 59 06</p>
                                             <div className="text-sm text-gray-500 mt-1 space-y-1">
                                                 <p>Lundi - Jeudi : 10h00–13h00 / 14h30–20h00</p>
                                                 <p className="text-primary font-bold">Vendredi : 10h00–12h00 / 15h00–20h00</p>
@@ -214,21 +229,45 @@ const Contact = () => {
 
                     </div>
 
-                    {/* Carte Interactive Stylisée */}
-                    <div className="mt-20 lg:w-full w-full h-[400px] lg:h-[500px] relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl group">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2890.662279146!2d1.4026!3d43.5724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aebb6fec755555%3A0x0!2s65+All.+de+Bellefontaine%2C+31100+Toulouse!5e0!3m2!1sfr!2sfr!4v1620000000000!5m2!1sfr!2sfr"
-                            width="100%"
-                            height="100%"
-                            loading="lazy"
-                            className="absolute inset-0 w-full h-full border-0 z-10"
-                        ></iframe>
+                    {/* Cartes Interactives */}
+                    <div className="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-8">
 
-                        {/* Overlay Tech Discret */}
-                        <div className="absolute bottom-6 left-6 z-20 bg-black/80 backdrop-blur-md px-4 py-2 rounded border border-white/10 flex items-center gap-2 pointer-events-none">
-                            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                            <span className="text-xs font-bold text-white uppercase">En direct de l'atelier</span>
+                        {/* Carte Bellefontaine */}
+                        <div className="h-[400px] relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl group">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2890.662279146!2d1.4026!3d43.5724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aebb6fec755555%3A0x0!2s65+All.+de+Bellefontaine%2C+31100+Toulouse!5e0!3m2!1sfr!2sfr!4v1620000000000!5m2!1sfr!2sfr"
+                                width="100%"
+                                height="100%"
+                                loading="lazy"
+                                className="absolute inset-0 w-full h-full border-0 z-10"
+                            ></iframe>
+                            <div className="absolute top-4 left-4 z-20 bg-black/80 backdrop-blur-md px-4 py-2 rounded border border-white/10 pointer-events-none">
+                                <span className="text-white font-bold uppercase text-sm">📍 Atelier Bellefontaine</span>
+                            </div>
+                            <div className="absolute bottom-6 left-6 z-20 bg-black/80 backdrop-blur-md px-4 py-2 rounded border border-white/10 flex items-center gap-2 pointer-events-none">
+                                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                                <span className="text-xs font-bold text-white uppercase">En direct</span>
+                            </div>
                         </div>
+
+                        {/* Carte Borderouge */}
+                        <div className="h-[400px] relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl group">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.904836657963!2d1.453272976652438!3d43.63032797110321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aef7838562f795%3A0x6442655555555555!2s33%20Bd%20Andr%C3%A9%20Netwiller%2C%2031200%20Toulouse!5e0!3m2!1sfr!2sfr!4v1705590000000!5m2!1sfr!2sfr"
+                                width="100%"
+                                height="100%"
+                                loading="lazy"
+                                className="absolute inset-0 w-full h-full border-0 z-10"
+                            ></iframe>
+                            <div className="absolute top-4 left-4 z-20 bg-black/80 backdrop-blur-md px-4 py-2 rounded border border-white/10 pointer-events-none">
+                                <span className="text-white font-bold uppercase text-sm">📍 Atelier Borderouge</span>
+                            </div>
+                            <div className="absolute bottom-6 left-6 z-20 bg-black/80 backdrop-blur-md px-4 py-2 rounded border border-white/10 flex items-center gap-2 pointer-events-none">
+                                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                                <span className="text-xs font-bold text-white uppercase">Ouvert</span>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </section>
