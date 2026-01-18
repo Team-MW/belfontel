@@ -21,7 +21,7 @@ const Footer = () => {
 
     return (
         <footer className="bg-metallic-900 border-t border-metallic-700 mt-0">
-            <div className="container-custom pt-40 pb-20">
+            <div className="container-custom pt-12 pb-20">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
                     {/* Colonne 1: Logo et description */}
                     <motion.div
@@ -40,7 +40,8 @@ const Footer = () => {
                             Qualité premium et service express garanti.
                         </p>
                         <div className="text-gray-400 text-sm space-y-2">
-                            <p className="flex items-center gap-2"><span className="text-primary">📍</span> 65 All. de Bellefontaine, 31100 Toulouse</p>
+                            <p className="flex items-start gap-2"><span className="text-primary mt-1">📍</span> <span>65 All. de Bellefontaine, 31100 Toulouse</span></p>
+                            <p className="flex items-start gap-2"><span className="text-primary mt-1">📍</span> <span>33 Bd André Netwiller, 31200 Toulouse</span></p>
                             <p className="flex items-center gap-2"><span className="text-primary">📞</span> 05 32 59 59 06</p>
                         </div>
                     </motion.div>
