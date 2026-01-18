@@ -112,9 +112,13 @@ const Footer = () => {
 
                 {/* Barre de copyright */}
                 <div className="border-t border-metallic-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p className="text-gray-500 text-sm">
-                        © {currentYear} BELFONTEL. Tous droits réservés.
-                    </p>
+                    <div className="flex flex-col md:flex-row items-center gap-1 text-sm text-gray-500">
+                        <p>© {currentYear} BELFONTEL. Tous droits réservés.</p>
+                        <span className="hidden md:block mx-2">|</span>
+                        <p>
+                            Réalisé par <a href="https://microdidact.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors font-semibold">Microdidact</a>
+                        </p>
+                    </div>
                     <div className="flex gap-6 text-sm">
                         <Link to="/mentions-legales" className="text-gray-500 hover:text-primary transition-colors">
                             Mentions légales

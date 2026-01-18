@@ -1,6 +1,38 @@
 import { motion } from 'framer-motion';
 import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
+
+// Composant interne pour l'animation des nombres
+const AnimatedCounter = ({ end, suffix = '', duration = 2000 }: { end: number, suffix?: string, duration?: number }) => {
+    const [count, setCount] = useState(0);
+
+    return (
+        <motion.span
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            onViewportEnter={() => {
+                let start = 0;
+                // Calcul simple pour l'animation
+                const totalFrames = duration / 16;
+                const increment = end / totalFrames;
+
+                const timer = setInterval(() => {
+                    start += increment;
+                    if (start >= end) {
+                        setCount(end);
+                        clearInterval(timer);
+                    } else {
+                        setCount(start);
+                    }
+                }, 16);
+            }}
+        >
+            {Math.floor(count)}{suffix}
+        </motion.span>
+    );
+};
 
 const Portfolio = () => {
     const items = [
@@ -152,19 +184,27 @@ const Portfolio = () => {
                 <div className="container-custom">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-white/5">
                         <div className="p-4">
-                            <div className="text-4xl font-black text-white mb-2">15k+</div>
+                            <div className="text-4xl font-black text-white mb-2 flex justify-center">
+                                <AnimatedCounter end={15} suffix="k+" />
+                            </div>
                             <div className="text-xs text-gray-400 uppercase tracking-widest">Clients</div>
                         </div>
                         <div className="p-4">
-                            <div className="text-4xl font-black text-white mb-2">4.9/5</div>
+                            <div className="text-4xl font-black text-white mb-2 flex justify-center">
+                                4.9<span className="text-2xl mt-auto ml-1">/5</span>
+                            </div>
                             <div className="text-xs text-gray-400 uppercase tracking-widest">Avis Google</div>
                         </div>
                         <div className="p-4">
-                            <div className="text-4xl font-black text-white mb-2">30min</div>
+                            <div className="text-4xl font-black text-white mb-2 flex justify-center">
+                                <AnimatedCounter end={30} suffix="min" />
+                            </div>
                             <div className="text-xs text-gray-400 uppercase tracking-widest">Temps Moyen</div>
                         </div>
                         <div className="p-4">
-                            <div className="text-4xl font-black text-white mb-2">12M</div>
+                            <div className="text-4xl font-black text-white mb-2 flex justify-center">
+                                <AnimatedCounter end={12} suffix="M" />
+                            </div>
                             <div className="text-xs text-gray-400 uppercase tracking-widest">Garantie</div>
                         </div>
                     </div>

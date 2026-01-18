@@ -345,6 +345,78 @@ const Home = () => {
                 </div>
             </section>
 
+            {/* SECTION: NOTRE BOUTIQUE (LOCALISATION) */}
+            <section className="section-dark py-24 relative overflow-hidden border-t border-white/5">
+                <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
+
+                <div className="container-custom relative z-10">
+                    <div className="flex flex-col lg:flex-row gap-12 items-center">
+
+                        {/* Infos Boutique */}
+                        <div className="lg:w-1/2 space-y-8">
+                            <div className="inline-block px-3 py-1 border border-primary/30 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-2">
+                                Localisation
+                            </div>
+                            <h2 className="text-4xl md:text-6xl font-black text-white uppercase leading-none">
+                                L'Atelier <br /> <span className="text-gray-700">Toulousain</span>
+                            </h2>
+                            <p className="text-gray-400 text-lg font-light max-w-md">
+                                Situé en plein cœur de Toulouse, notre atelier-boutique vous accueille sans rendez-vous pour toutes vos réparations et achats.
+                            </p>
+
+                            <div className="space-y-6 pt-6">
+                                <div className="flex items-start gap-4 group">
+                                    <div className="w-12 h-12 bg-metallic-800 rounded-lg flex items-center justify-center text-2xl border border-white/10 group-hover:border-primary/50 transition-colors">
+                                        📍
+                                    </div>
+                                    <div>
+                                        <h4 className="text-white font-bold uppercase text-sm mb-1">Adresse</h4>
+                                        <p className="text-gray-400">14 rue de la République<br />31000 Toulouse</p>
+                                    </div>
+                                </div>
+                                <div className="flex items-start gap-4 group">
+                                    <div className="w-12 h-12 bg-metallic-800 rounded-lg flex items-center justify-center text-2xl border border-white/10 group-hover:border-primary/50 transition-colors">
+                                        🕒
+                                    </div>
+                                    <div>
+                                        <h4 className="text-white font-bold uppercase text-sm mb-1">Horaires</h4>
+                                        <p className="text-gray-400">Lun - Sam : 10h00 - 19h00<br /><span className="text-primary text-xs font-bold">OUVERT NON-STOP</span></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a
+                                href="https://www.google.com/maps/search/?api=1&query=Belfontel+Toulouse"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-3 text-white font-bold uppercase tracking-wider hover:text-primary transition-colors mt-4 group"
+                            >
+                                <span>Itinéraire vers la boutique</span>
+                                <span className="transform group-hover:translate-x-2 transition-transform">→</span>
+                            </a>
+                        </div>
+
+                        {/* Carte Interactive Stylisée */}
+                        <div className="lg:w-1/2 w-full h-[400px] lg:h-[500px] relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl group">
+                            <div className="absolute inset-0 bg-metallic-900 animate-pulse z-0"></div>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2889.020586076266!2d1.4328!3d43.6045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aebb6fec755555%3A0x406f69c2f411030!2sToulouse!5e0!3m2!1sfr!2sfr!4v1620000000000!5m2!1sfr!2sfr"
+                                width="100%"
+                                height="100%"
+                                loading="lazy"
+                                className="absolute inset-0 w-full h-full border-0 filter invert contrast-125 brightness-75 grayscale hover:grayscale-0 transition-all duration-700 z-10 opacity-90 hover:opacity-100"
+                            ></iframe>
+
+                            {/* Overlay Tech */}
+                            <div className="absolute bottom-6 left-6 z-20 bg-black/80 backdrop-blur-md px-4 py-2 rounded border border-white/10 flex items-center gap-2">
+                                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                                <span className="text-xs font-bold text-white uppercase">En direct de l'atelier</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* CTA FINAL */}
             <section className="py-20 bg-primary relative overflow-hidden">
                 <div className="absolute inset-0 bg-black/50 grid-pattern"></div>
