@@ -82,7 +82,7 @@ const Home = () => {
         <div className="min-h-screen">
             <SEO
                 title="Réparation iPhone & Samsung Toulouse | BELPHONETEL - N°1 Rapide & Garanti"
-                description="Réparation express de téléphone à Toulouse (31). Changement écran iPhone, batterie Samsung, Micro-soudure. Sans rendez-vous, garantie, pièces d'origine. Vente smartphones neufs et occasion."
+                description="BELPHONETEL Toulouse (Bellefontaine) : Expert réparation électronique (Téléphones, Tablettes, Consoles). Vente & Rachat de mobiles. Service rapide, pièces de qualité et garantie."
                 keywords="réparation téléphone toulouse, rachat mobile, vente iphone, réparation écran, belfontel, accessoires smartphone"
             />
 

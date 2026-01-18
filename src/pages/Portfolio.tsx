@@ -96,7 +96,7 @@ const Portfolio = () => {
         <div className="pt-20 min-h-screen">
             <SEO
                 title="Achat iPhone & Samsung Reconditionné Toulouse | Stock BELPHONETEL"
-                description="Showroom Belfontel : iPhone 15, 14, 13 Pro Max et Samsung S23/S24 en stock. Téléphones reconditionnés à neuf, garantis 12 mois. Vente et rachat immédiat."
+                description="Découvrez notre sélection de smartphones reconditionnés et accessoires à Toulouse. iPhones, Samsung, Coques, Protections. Qualité garantie chez BELPHONETEL."
             />
 
             {/* Hero Section */}
